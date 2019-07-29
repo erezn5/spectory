@@ -9,7 +9,7 @@ import java.util.Properties;
 public class EnvConf {
 
     private static Properties prop;
-    private static File APP_PROPERTIERS_FILE = new File("src/main/resources/app/app.properties");
+    private static File APP_PROPERTIES_FILE = new File("src/main/resources/app/app.properties");
 
     private EnvConf(){}
 
@@ -19,7 +19,7 @@ public class EnvConf {
 
     private static void load(){
 
-        try(InputStream input = new FileInputStream(APP_PROPERTIERS_FILE.getAbsoluteFile())){
+        try(InputStream input = new FileInputStream(APP_PROPERTIES_FILE.getAbsoluteFile())){
             prop = new Properties();
             prop.load(input);
         }catch (IOException ex){

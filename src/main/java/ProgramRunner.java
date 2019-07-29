@@ -67,8 +67,8 @@ public class ProgramRunner {
 
     }
 
-    private static void settingWorkingDir(String s) {
-        workingDir = s;
+    private static void settingWorkingDir(String newWorkdir) {
+        workingDir = newWorkdir;
     }
 
 }

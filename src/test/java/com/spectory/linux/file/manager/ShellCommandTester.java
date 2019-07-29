@@ -41,7 +41,6 @@ public class ShellCommandTester {
         FileUtil.mkfileCommand(fileName);
         Assert.assertTrue(FileUtil.isFolderExist(fileName), "File was not created as expected");
         logger.info("File was created successfully");
-
     }
 
     @Test(priority = 30)
@@ -53,9 +52,6 @@ public class ShellCommandTester {
         FileUtil.lsCommand(folderName);
         Assert.assertEquals(FileUtil.folderSize(folderName),5, "cd command was not successful");
         logger.info("cd command was successful");
-
-
-
     }
 
     @Test(priority = 40)

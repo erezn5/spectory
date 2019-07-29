@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
-import java.security.PublicKey;
 import java.util.Objects;
 
 public  class FileUtil {
