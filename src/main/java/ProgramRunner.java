@@ -10,14 +10,12 @@ public class ProgramRunner{
 
     private static final Logger logger = LoggerFactory.getLogger(ProgramRunner.class);
     private static String workingDir = EnvConf.getProperty("test.env");
-//    private static final String LOG_FOLDER = EnvConf.getProperty("test_output.logs.folder");
 
     public static void main(String[] args) throws IOException {
 
-
         logger.info("Loading setup for File Manager Tester");
         System.out.println("**** PLEASE ENTER 'help' IN ORDER TO SEE COMMANDS SUPPORTED ****");
-        System.out.print("shell>");
+        System.out.print("shell>>");
         String commandLine;
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
         commandLine = console.readLine();
@@ -62,7 +60,7 @@ public class ProgramRunner{
                 default:
                     System.out.println("> insert your next command\n>");
             }
-            System.out.print("shell>");
+            System.out.print("shell>>");
             commandLine = console.readLine();
 
         }

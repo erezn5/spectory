@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
+import java.security.PublicKey;
 import java.util.Objects;
 
 public  class FileUtil {
@@ -77,6 +78,11 @@ public  class FileUtil {
     public static void deleteDirectoryRecursion(String folder) throws IOException {
         FileUtils.deleteDirectory(new File(folder));
         logger.info("Folder deleted successfully");
+    }
+
+    public static boolean deleteFile(String filePath){
+        File file = new File(filePath);
+        return file.delete();
     }
 
     public static String extractExtension(String folderName) {

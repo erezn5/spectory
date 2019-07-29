@@ -17,7 +17,7 @@ public class ShellCommandTester {
     private static String mkfile = EnvConf.getProperty("mkfile.test.command");
     private static String ls = EnvConf.getProperty("ls.test.command");
     private static String cd = EnvConf.getProperty("cd.test.command");
-    static String folderName;
+    private static String folderName;
 
     @Test(priority = 10)
     public void testMkdirCommand() throws IOException {
@@ -51,7 +51,9 @@ public class ShellCommandTester {
         String folderName = fileExtractor(cd);
         FileUtil.cdCommand(folderName);
         FileUtil.lsCommand(folderName);
-        Assert.assertEquals(FileUtil.folderSize(folderName),3);
+        Assert.assertEquals(FileUtil.folderSize(folderName),5, "cd command was not successful");
+        logger.info("cd command was successful");
+
 
 
     }
@@ -61,14 +63,16 @@ public class ShellCommandTester {
         System.out.print("shell>>");
         System.out.println(ls);
         String folderName = fileExtractor(cd);
-        Assert.assertEquals(FileUtil.folderSize(folderName),3, "ls was not performed as expected");
-
+        Assert.assertEquals(FileUtil.folderSize(folderName),5, "ls was not performed as expected");
+        logger.info("ls command was successful");
     }
 
     @AfterClass()
     public static void tearDown() throws IOException {
         logger.info("Deleting all folders and files...");
         FileUtil.deleteDirectoryRecursion(folderName);
+        Assert.assertTrue(FileUtil.deleteFile(EnvConf.getProperty("test.file")), "File was not deleted");
+        logger.info("all files and folders deleted successfully");
     }
 
 
