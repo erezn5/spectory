@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ProgramRunner{
+public class ProgramRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(ProgramRunner.class);
     private static String workingDir = EnvConf.getProperty("test.env");
